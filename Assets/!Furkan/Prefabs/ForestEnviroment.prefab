@@ -68,28 +68,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForestEnviroment
       objectReference: {fileID: 0}
+    - target: {fileID: 8205852754294439587, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68959f105e2c92c4282cfc91596f6824,
+    - targetCorrespondingSourceObject: {fileID: 8205852754294439587, guid: 68959f105e2c92c4282cfc91596f6824,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6286534319869562849}
+      addedObject: {fileID: 4374223453530785675}
   m_SourcePrefab: {fileID: 100100000, guid: 68959f105e2c92c4282cfc91596f6824, type: 3}
---- !u!1 &8762372275275220904 stripped
+--- !u!1 &340674210406761562 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 68959f105e2c92c4282cfc91596f6824,
+  m_CorrespondingSourceObject: {fileID: 8205852754294439587, guid: 68959f105e2c92c4282cfc91596f6824,
     type: 3}
   m_PrefabInstance: {fileID: 8456452751576005369}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &6286534319869562849
+--- !u!65 &4374223453530785675
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8762372275275220904}
+  m_GameObject: {fileID: 340674210406761562}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -102,5 +107,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 28.753128, y: 0, z: 60.753357}
-  m_Center: {x: 0.17502737, y: -0.49999997, z: 29.876678}
+  m_Size: {x: 96.359566, y: 14.130001, z: 1087.4666}
+  m_Center: {x: 1.3484001, y: -6.4489517, z: 536.27966}

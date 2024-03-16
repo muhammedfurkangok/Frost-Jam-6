@@ -1154,8 +1154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterPositionStates: 1
   m_animator: {fileID: 1318175654}
-  _jumpPower: 200
-  _rigidbody: {fileID: 0}
+  _jumpPower: 1200
+  _swipeSpeed: 35
+  rotEase: 32
+  rotationDuration: 0.23
 --- !u!54 &1318175658
 Rigidbody:
   m_ObjectHideFlags: 0

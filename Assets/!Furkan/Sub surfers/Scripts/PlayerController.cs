@@ -15,7 +15,8 @@ namespace _Furkan.Sub_surfers.Scripts
         [SerializeField] private CharacterPositionStates _characterPositionStates = CharacterPositionStates.Mid;
         [SerializeField] private Animator m_animator;
         [SerializeField] private float _jumpPower = 30;
-        [SerializeField] private Rigidbody _rigidbody;
+
+        [SerializeField]  private float _swipeSpeed = 20;
 
         #endregion
 
@@ -28,10 +29,10 @@ namespace _Furkan.Sub_surfers.Scripts
         private bool isGrounded = true;
 
         private float _xValue = 20;
-        [SerializeField]  private float _swipeSpeed = 20;
+       
         private float _newXPos = 0f;
         private float _lerp;
-      
+        private Rigidbody _rigidbody;
         private float ColHeight;
         private float ColCenterY;
         private float rollDuration = 1.18f;
@@ -113,7 +114,7 @@ namespace _Furkan.Sub_surfers.Scripts
                 }
                 transform.DORotate(new Vector3(0f, 45f, 0), rotationDuration);
             }
-            print(_newXPos);
+          
             transform.DOMoveX(_newXPos, _swipeSpeed).SetSpeedBased().onComplete += () => transform.DORotate(Vector3.zero, rotationDuration).SetEase(rotEase);
 
 

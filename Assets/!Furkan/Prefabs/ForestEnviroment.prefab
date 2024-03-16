@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8456452751576005369
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -36.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2646042685714016546, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fc8a3df060d3c13448f1d5e9816a1bdc, type: 2}
+    - target: {fileID: 919132149155446097, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_Name
+      value: ForestEnviroment
+      objectReference: {fileID: 0}
+    - target: {fileID: 8205852754294439587, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8205852754294439587, guid: 68959f105e2c92c4282cfc91596f6824,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4374223453530785675}
+  m_SourcePrefab: {fileID: 100100000, guid: 68959f105e2c92c4282cfc91596f6824, type: 3}
+--- !u!1 &340674210406761562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8205852754294439587, guid: 68959f105e2c92c4282cfc91596f6824,
+    type: 3}
+  m_PrefabInstance: {fileID: 8456452751576005369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4374223453530785675
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340674210406761562}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 96.359566, y: 14.130001, z: 1087.4666}
+  m_Center: {x: 1.3484001, y: -6.4489517, z: 536.27966}

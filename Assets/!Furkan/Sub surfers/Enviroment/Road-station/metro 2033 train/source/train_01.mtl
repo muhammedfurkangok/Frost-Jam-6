@@ -1,0 +1,30 @@
+#
+# MR_train_01.mtl
+#
+
+newmtl veh_vagon_metro_01.dds
+illum 2
+Kd 0.800000 0.800000 0.800000
+Ka 0.200000 0.200000 0.200000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ns 0.000000
+map_Kd veh_vagon_metro_01.png
+
+newmtl veh_vagon_metro_03.dds
+illum 2
+Kd 0.800000 0.800000 0.800000
+Ka 0.200000 0.200000 0.200000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ns 0.000000
+map_Kd veh_vagon_metro_03.png
+
+newmtl veh_vagon_metro_02.dds
+illum 2
+Kd 0.800000 0.800000 0.800000
+Ka 0.200000 0.200000 0.200000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ns 0.000000
+map_Kd veh_vagon_metro_02.png

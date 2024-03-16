@@ -621,10 +621,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046c48f1164902840b8e77f7d362e5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagTimes:
-  - 10
+  flags: 
+  fireplaceParticles: []
+  flagWaitTimes:
+  - 1
   - 0
   - 0
+  flagPlayTimes:
+  - 5
   - 0
   - 0
   currentFlag: 0
@@ -1140,7 +1144,7 @@ Transform:
   m_GameObject: {fileID: 2088923292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -8.287399, y: 1.208, z: 11.323}
+  m_LocalPosition: {x: -8.287399, y: 1.208, z: 11.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

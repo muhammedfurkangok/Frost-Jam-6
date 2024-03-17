@@ -62,7 +62,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 16fcc1a55fe3a6d41a4147383393bb60, type: 2}
+      objectReference: {fileID: 2100000, guid: d665f255642371c47b173ab7d1dce97b, type: 2}
     - target: {fileID: -20980686485941461, guid: be04a44d8079b6b4b8713b3df54e689f,
         type: 3}
       propertyPath: m_TagString
@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0939698b788a4b81a7049bb5a36c6839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedObstacle: {fileID: 0}
   particles:
   - {fileID: 5887609064371902990}
   meshRenderer: {fileID: 2122091572776566283}

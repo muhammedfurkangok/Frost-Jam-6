@@ -9,12 +9,13 @@ namespace _Furkan.Sub_surfers.Scripts
         [SerializeField] private ParticleSystem[] particles;
         [SerializeField] private MeshRenderer meshRenderer;
 
-        public void DestroyObstacle()
+        public void DestroyObstacle(bool mustDestroyLinkedObstacle)
         {
-            linkedObstacle.DestroyObstacle();
+            if (mustDestroyLinkedObstacle) linkedObstacle.DestroyObstacle(false);
 
             foreach (var particle in particles) particle.gameObject.SetActive(true);
 
+            GetComponent<Collider>().enabled = false; //todo: fix this
             meshRenderer.enabled = false;
             Destroy(gameObject, 5f);
         }

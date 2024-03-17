@@ -592,6 +592,8 @@ MonoBehaviour:
   subwaySurfersVideoPlayer: {fileID: 8957303887297187290}
   subwaySurfersManager: {fileID: 0}
   carController: {fileID: 0}
+  subwaySurfersPlane: {fileID: 8395799460210299061}
+  carPlane: {fileID: 6814832032332734678}
 --- !u!1 &5641382204578420398
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2765212547560459918
 Transform:
   m_ObjectHideFlags: 0

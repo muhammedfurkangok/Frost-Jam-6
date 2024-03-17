@@ -45,5 +45,3 @@ public class JumpScareController : MonoBehaviour
         GameSignals.Instance.onTextCompleted -= OnTextCompeleted;
     }
 }
-}
-}

@@ -9,6 +9,7 @@ namespace _Furkan.Sub_surfers.Scripts
     {
         [Header("References")]
         [SerializeField] private SubwaySurfersManager subwaySurfersManager;
+        [SerializeField] private AudioSource audioSource;
         [SerializeField] private Camera subwaySurfersCamera;
         [SerializeField] private Animator animator;
         [SerializeField] private Rigidbody rigidbody;
@@ -24,6 +25,7 @@ namespace _Furkan.Sub_surfers.Scripts
         [SerializeField] private float rollDuration = 1.18f;
         [SerializeField] private float deltaXValue = 20;
         [SerializeField] private float obstacleHitWaitTime = 3f;
+       
 
         [Header("Slide Collider Values")]
         [SerializeField] private float slideColliderHeight = 0.01f;
@@ -38,6 +40,9 @@ namespace _Furkan.Sub_surfers.Scripts
 
         private Vector3 startPosition;
         private float newXPosition;
+        [Header("Audio Clips")]
+        [SerializeField] private AudioClip jumpSound;
+        [SerializeField] private AudioClip _deathSound;
 
         private static readonly int SlideTrigger = Animator.StringToHash("Slide_Trigger");
         private static readonly int ObstacleHit = Animator.StringToHash("Obstacle_Hit");
@@ -129,6 +134,7 @@ namespace _Furkan.Sub_surfers.Scripts
             {
                 if (swipeUp)
                 {
+                    audioSource.PlayOneShot(jumpSound);
                     animator.CrossFadeInFixedTime("Jump",0.1f);
                     rigidbody.AddForce(jumpPower * Vector3.up);
                     isJumping = true;
@@ -171,7 +177,7 @@ namespace _Furkan.Sub_surfers.Scripts
             {
                 var obstacle = other.collider.GetComponent<Obstacle>();
                 if (IsPlayerAboveGivenObject(obstacle.transform)) return;
-
+                audioSource.PlayOneShot(_deathSound);
                 isObstacleHit = true;
                 obstacle.DestroyObstacle(true);
 

@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObstacleJump
       objectReference: {fileID: 0}
+    - target: {fileID: 5658733803344123776, guid: e98c9cf8c16559e42923dffbc4e8a18e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 8429327474612760356, guid: e98c9cf8c16559e42923dffbc4e8a18e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -71,5 +76,27 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5658733803344123776, guid: e98c9cf8c16559e42923dffbc4e8a18e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7410041967083983333}
   m_SourcePrefab: {fileID: 100100000, guid: e98c9cf8c16559e42923dffbc4e8a18e, type: 3}
+--- !u!1 &3361239927622659138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5658733803344123776, guid: e98c9cf8c16559e42923dffbc4e8a18e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6927197644881968066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7410041967083983333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3361239927622659138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0939698b788a4b81a7049bb5a36c6839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

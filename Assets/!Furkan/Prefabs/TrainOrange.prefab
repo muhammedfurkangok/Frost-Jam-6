@@ -68,28 +68,33 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: af12f169f4361ca49b3dcc218ab33959,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: af12f169f4361ca49b3dcc218ab33959,
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: af12f169f4361ca49b3dcc218ab33959,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4996636285001036493}
+      addedObject: {fileID: 5540574658752086511}
   m_SourcePrefab: {fileID: 100100000, guid: af12f169f4361ca49b3dcc218ab33959, type: 3}
---- !u!1 &195029803743430556 stripped
+--- !u!1 &9167404090208993093 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: af12f169f4361ca49b3dcc218ab33959,
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: af12f169f4361ca49b3dcc218ab33959,
     type: 3}
   m_PrefabInstance: {fileID: 1041892010173201101}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4996636285001036493
+--- !u!114 &5540574658752086511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195029803743430556}
+  m_GameObject: {fileID: 9167404090208993093}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0939698b788a4b81a7049bb5a36c6839, type: 3}

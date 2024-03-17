@@ -509,8 +509,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d55b26cc1326e4f9bc5e26905635f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CreaturePaths: []
-  CreatureVector3: []
+  thisText: {fileID: 823382644}
+  _canvasGroup: {fileID: 1663319738}
+  delay: 0.05
+  yazi: 'YINE POTANSIYELIMIZI KAYBETTIGIMIZ VE BEYNIMIZI CURUTTUGUMUZ GUNLERDEN BIRI...
+
+    BAKALIM
+    BUGUN AYNI ANDA KAC TANE ICERIK TUKETECEGIZ.'
 --- !u!114 &823382644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,16 +672,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599863118684511518, guid: 7c86d948eba0b294894586f338a951ae,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000000084423135
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599863118684511518, guid: 7c86d948eba0b294894586f338a951ae,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000000016559687
+      objectReference: {fileID: 0}
     - target: {fileID: 7330872869045667363, guid: 7c86d948eba0b294894586f338a951ae,
         type: 3}
       propertyPath: m_Name
       value: CarGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185799967828237371, guid: 7c86d948eba0b294894586f338a951ae,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000000084423135
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185799967828237371, guid: 7c86d948eba0b294894586f338a951ae,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000000016559687
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c86d948eba0b294894586f338a951ae, type: 3}
+--- !u!114 &847812434 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 598843825589618215, guid: 7c86d948eba0b294894586f338a951ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 847812433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a1d5f246db83d4e9db796e9e19282e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &891993913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1573,6 +1610,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Phone
       objectReference: {fileID: 0}
+    - target: {fileID: 5063304060623654373, guid: 8e5ddc2961f0240468560442b59ed84c,
+        type: 3}
+      propertyPath: carController
+      value: 
+      objectReference: {fileID: 847812434}
     - target: {fileID: 5063304060623654373, guid: 8e5ddc2961f0240468560442b59ed84c,
         type: 3}
       propertyPath: familyGuyVideoPlayer

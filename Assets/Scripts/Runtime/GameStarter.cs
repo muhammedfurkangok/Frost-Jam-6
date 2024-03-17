@@ -1,5 +1,6 @@
 using System;
 using _Furkan;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -14,9 +15,15 @@ public class GameStarter : MonoBehaviour
     [SerializeField] private GameObject subwaySurfersPlane;
     [SerializeField] private GameObject carPlane;
 
+    [Header("Parameters")]
+    [SerializeField] private float gameChangeTime;
+
     [Header("Game Complete")]
     [SerializeField] private GameObject videoPlane;
     [SerializeField] private Slider slider;
+
+    private bool isGameCompleted;
+    public bool isCurrentGameSubway;
 
     private void Start()
     {
@@ -30,29 +37,42 @@ public class GameStarter : MonoBehaviour
 
     private void OnCameraComplete()
     {
-        ChangeGame(true);
+        ChangeGame();
+        StartGameChangeLoop();
 
         familyGuyVideoPlayer.SetDirectAudioVolume(0, 0.1f);
         subwaySurfersVideoPlayer.Play();
     }
 
-    private void Update()
+    private async void StartGameChangeLoop()
     {
-        if (Input.GetKeyDown(KeyCode.J)) ChangeGame(true);
-        if (Input.GetKeyDown(KeyCode.K)) ChangeGame(false);
+        while (!isGameCompleted)
+        {
+            await UniTask.WaitForSeconds(gameChangeTime);
+            ChangeGame();
+        }
     }
 
-    private void ChangeGame(bool willSubwayBeActive)
+    private void Update()
     {
-        subwaySurfersManager.isGameActive = willSubwayBeActive;
-        carController.isGameActive = !willSubwayBeActive;
+        if (Input.GetKeyDown(KeyCode.J)) ChangeGame();
+    }
 
-        subwaySurfersPlane.SetActive(willSubwayBeActive);
-        carPlane.SetActive(!willSubwayBeActive);
+    private void ChangeGame()
+    {
+        isCurrentGameSubway = !isCurrentGameSubway;
+
+        subwaySurfersManager.isGameActive = isCurrentGameSubway;
+        carController.isGameActive = !isCurrentGameSubway;
+
+        subwaySurfersPlane.SetActive(isCurrentGameSubway);
+        carPlane.SetActive(!isCurrentGameSubway);
     }
 
     public void CompleteGame()
     {
+        isGameCompleted = true;
+
         subwaySurfersManager.isGameActive = false;
         carController.isGameActive = false;
 

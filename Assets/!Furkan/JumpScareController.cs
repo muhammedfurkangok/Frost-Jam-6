@@ -15,7 +15,10 @@ public class JumpScareController : MonoBehaviour
     [SerializeField] private float jumpScareDuration;
     [SerializeField] private Transform[] JumpScarePaths;
     [SerializeField] private Vector3[] JumpScarePathsVector3;
-        
+
+    [Header("Game Complete")]
+    [SerializeField] private GameObject levelCompleteCanvas;
+
     private async void Start()
     {
         await UniTask.WaitForSeconds(gameCompleteTime);
@@ -40,7 +43,7 @@ public class JumpScareController : MonoBehaviour
         transform.DOPath(JumpScarePathsVector3, jumpScareDuration, PathType.CatmullRom).SetEase(Ease.Linear).OnWaypointChange(index =>
         {
             if (index == 3) jumpScareAudioSource.Play();
-        });
+        }).OnComplete(() => levelCompleteCanvas.SetActive(true));
     }
 
     private void OnDisable()

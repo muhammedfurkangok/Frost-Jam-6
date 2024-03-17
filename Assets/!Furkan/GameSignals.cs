@@ -5,14 +5,12 @@ namespace _Furkan
     public class GameSignals: UnityEngine.MonoBehaviour
     {
         public static GameSignals Instance;
-        
-        #region Singleton
 
         private void Awake()
         {
             if (Instance != null)
             {
-                Destroy(gameObject);
+                Destroy(this);
             }
             else
             {
@@ -20,7 +18,6 @@ namespace _Furkan
             }
         }
 
-        #endregion
         public UnityAction onTextCompleted = delegate {  };
         public UnityAction onCameraComplete = delegate {  };
     }

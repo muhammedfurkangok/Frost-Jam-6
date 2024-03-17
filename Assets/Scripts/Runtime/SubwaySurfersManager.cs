@@ -1,4 +1,3 @@
-using System;
 using _Furkan.Sub_surfers.Scripts;
 using UnityEngine;
 
@@ -35,6 +34,5 @@ public class SubwaySurfersManager : MonoBehaviour
     {
         levels[0].transform.position = levels[2].position + Vector3.forward * level2Distance;
         levels[1].transform.position = levels[0].position + Vector3.forward * level1Distance;
-        print("head");
     }
 }

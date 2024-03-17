@@ -47,17 +47,14 @@ namespace _Furkan.Sub_surfers.Scripts
 
         #endregion
 
+        private Vector3 startPosition;
 
-        private void Awake()
-        {
-            Init();
-        }
-
-        private void Init()
+        private void Start()
         {
             m_animator = GetComponent<Animator>();
-            transform.position = Vector3.zero;
+            startPosition = transform.position;
             _rigidbody = GetComponent<Rigidbody>();
+
         }
 
         private void Update()
@@ -87,12 +84,12 @@ namespace _Furkan.Sub_surfers.Scripts
                     _newXPos = -_xValue;
                     _characterPositionStates = CharacterPositionStates.Left;
                     m_animator.Play("dodgeLeft");
-                    
+
                 }
                 else if(_characterPositionStates == CharacterPositionStates.Right)
                 {
                     _characterPositionStates = CharacterPositionStates.Mid;
-                    _newXPos = 0f;
+                    _newXPos = startPosition.x;
                     m_animator.Play("dodgeLeft");
                 }
 
@@ -109,7 +106,7 @@ namespace _Furkan.Sub_surfers.Scripts
                 else if(_characterPositionStates == CharacterPositionStates.Left)
                 {
                     _characterPositionStates = CharacterPositionStates.Mid;
-                    _newXPos = 0f;
+                    _newXPos = startPosition.x;
                     m_animator.Play("dodgeRight");
                 }
                 transform.DORotate(new Vector3(0f, 45f, 0), rotationDuration);

@@ -585,6 +585,7 @@ MonoBehaviour:
   yazi: "KARSINA CIKAN KISI GELECEKTEKI HALININ SANA SON MESAJIYDI POTANSIYELINI
     FARK ET VE BEYNINI CURUTMEYI BIRAK\n\nOYNADIGINIZ ICIN TESEKKURLER\n\nOZGUR DALBELER
     \nAGAH CANSU\nMUHAMMED FURKAN GOK\n"
+  isCompletedTypeWriter: 1
 --- !u!114 &332764459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,6 +956,7 @@ MonoBehaviour:
 
     BAKALIM
     BUGUN AYNI ANDA KAC TANE ICERIK TUKETECEGIZ.'
+  isCompletedTypeWriter: 0
 --- !u!114 &823382644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,12 +1131,12 @@ PrefabInstance:
     - target: {fileID: 6599863118684511518, guid: 7c86d948eba0b294894586f338a951ae,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000084423135
+      value: -0.0000000084423135
       objectReference: {fileID: 0}
     - target: {fileID: 6599863118684511518, guid: 7c86d948eba0b294894586f338a951ae,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000016559687
+      value: 0.0000000016559687
       objectReference: {fileID: 0}
     - target: {fileID: 7330872869045667363, guid: 7c86d948eba0b294894586f338a951ae,
         type: 3}
@@ -1144,12 +1146,12 @@ PrefabInstance:
     - target: {fileID: 8185799967828237371, guid: 7c86d948eba0b294894586f338a951ae,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000084423135
+      value: -0.0000000084423135
       objectReference: {fileID: 0}
     - target: {fileID: 8185799967828237371, guid: 7c86d948eba0b294894586f338a951ae,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000016559687
+      value: 0.0000000016559687
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

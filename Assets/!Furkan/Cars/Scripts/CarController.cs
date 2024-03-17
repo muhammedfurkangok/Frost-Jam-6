@@ -1,7 +1,4 @@
 ﻿using Cinemachine;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
@@ -30,8 +27,12 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
 
+    public bool isGameActive;
+
     private void FixedUpdate()
     {
+        if (!isGameActive) return;
+
         GetInput();
         HandleMotor();
         HandleSteering();
@@ -44,7 +45,7 @@ public class CarController : MonoBehaviour
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
         isBreaking = Input.GetKey(KeyCode.Space);
-    cam.m_Lens.FieldOfView = 60 + (verticalInput * 20);
+        cam.m_Lens.FieldOfView = 60 + (verticalInput * 20);
     }
 
     private void HandleMotor()

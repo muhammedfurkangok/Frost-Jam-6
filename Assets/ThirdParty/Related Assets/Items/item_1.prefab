@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33681286483234348}
   - component: {fileID: 23564150736104204}
   m_Layer: 0
-  m_Name: SM_Item_BeerCup_01
+  m_Name: item_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

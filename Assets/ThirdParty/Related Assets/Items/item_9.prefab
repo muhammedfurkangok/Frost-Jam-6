@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 33770028220956436}
   - component: {fileID: 23808886851354782}
   m_Layer: 0
-  m_Name: SM_Item_Pizza_Box_01
+  m_Name: item_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

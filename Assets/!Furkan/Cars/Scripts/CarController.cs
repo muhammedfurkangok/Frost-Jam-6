@@ -1,4 +1,5 @@
-﻿using Cinemachine;
+﻿using System;
+using Cinemachine;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
@@ -39,6 +40,10 @@ public class CarController : MonoBehaviour
         UpdateWheels();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M)) transform.eulerAngles = Vector3.zero;
+    }
 
     private void GetInput()
     {

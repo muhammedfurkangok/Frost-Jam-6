@@ -78,6 +78,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Pickup_Glow_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1867979686813558573, guid: 91a72156df3cc6e448c79ab8a828f3f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6766224482441032271, guid: 91a72156df3cc6e448c79ab8a828f3f3,
         type: 3}
       propertyPath: lengthInSec

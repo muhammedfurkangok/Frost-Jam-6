@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -7,8 +8,12 @@ namespace _Furkan.Sub_surfers.Scripts
     public class PlayerController : MonoBehaviour
     {
         [Header("References")]
+        [SerializeField] private Camera subwaySurfersCamera;
         [SerializeField] private Animator animator;
         [SerializeField] private Rigidbody rigidbody;
+        [SerializeField] private CapsuleCollider collider;
+
+        [Header("Camera Follow Offset")] [SerializeField] private Vector3 cameraFollowOffset = new Vector3(0f, 20f, -21f);
 
         [Header("Parameters")]
         [SerializeField] private float jumpPower = 1200;
@@ -19,12 +24,16 @@ namespace _Furkan.Sub_surfers.Scripts
         [SerializeField] private float deltaXValue = 20;
         [SerializeField] private float obstacleHitWaitTime = 3f;
 
+        [Header("Slide Collider Values")]
+        [SerializeField] private float slideColliderHeight = 0.01f;
+        [SerializeField] private float slideColliderCenterY = 0.01f;
+
         [Header("Info - No Touch")]
         [SerializeField] private CharacterPositionStates characterPositionState = CharacterPositionStates.Mid;
-        [SerializeField] private bool isObstacleHit;
         [SerializeField] private bool isJumping;
         [SerializeField] private bool isRolling;
         [SerializeField] private bool isGrounded = true;
+        public bool isObstacleHit;
 
         private Vector3 startPosition;
         private float newXPosition;
@@ -48,7 +57,12 @@ namespace _Furkan.Sub_surfers.Scripts
             Jump();
 
             if (swipeLeft || swipeRight) Move();
-            if (isGrounded && swipeDown) Roll();
+            if (isGrounded && swipeDown) Slide();
+        }
+
+        private void LateUpdate()
+        {
+            subwaySurfersCamera.transform.position = transform.position + cameraFollowOffset;
         }
 
         private void GetInput()
@@ -127,12 +141,21 @@ namespace _Furkan.Sub_surfers.Scripts
             }
         }
         
-        private async void Roll()
+        private async void Slide()
         {
+            var defaultColliderCenter = collider.center;
+            var defaultColliderHeight = collider.height;
+
+            collider.height = slideColliderHeight;
+            collider.center = new Vector3(collider.center.x, slideColliderCenterY, collider.center.z);
+
             animator.SetTrigger(SlideTrigger);
             isRolling = true;
             await UniTask.WaitForSeconds(rollDuration);
             isRolling = false;
+
+            collider.height = defaultColliderHeight;
+            collider.center = defaultColliderCenter;
         }
 
         private async void OnCollisionEnter(Collision other)
@@ -168,7 +191,7 @@ namespace _Furkan.Sub_surfers.Scripts
 
         private bool IsPlayerAboveGivenObject(Transform aboveObject)
         {
-            return false;
+            return transform.position.y - aboveObject.position.y >= 20f;
         }
     }
 }

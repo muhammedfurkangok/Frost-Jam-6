@@ -594,6 +594,8 @@ MonoBehaviour:
   carController: {fileID: 0}
   subwaySurfersPlane: {fileID: 8395799460210299061}
   carPlane: {fileID: 6814832032332734678}
+  videoPlane: {fileID: 1980565877637457457}
+  slider: {fileID: 9112907767392048260}
 --- !u!1 &5641382204578420398
 GameObject:
   m_ObjectHideFlags: 0

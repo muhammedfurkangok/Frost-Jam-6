@@ -1,47 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using _Furkan;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class JumpScareController : MonoBehaviour
 {
+    [Header("Game Complete Time")]
+    [SerializeField] private float gameCompleteTime;
+
+    [Header("References")]
+    [SerializeField] private GameStarter gameStarter;
+    [SerializeField] private AudioSource jumpScareAudioSource;
+    [SerializeField] private float jumpScareDuration;
     [SerializeField] private Transform[] JumpScarePaths;
     [SerializeField] private Vector3[] JumpScarePathsVector3;
-    [SerializeField] private GameObject slider;
         
-    private void Start()
+    private async void Start()
     {
-        GameSignals.Instance.onTextCompleted += OnTextCompeleted;
+        await UniTask.WaitForSeconds(gameCompleteTime);
+        OnGameCompleted();
     }
 
-    private async void OnTextCompeleted()
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.L)) OnGameCompleted();
+    }
+
+    private void OnGameCompleted()
+    {
+        gameStarter.CompleteGame();
+
         JumpScarePathsVector3 = new Vector3[JumpScarePaths.Length];
         for (int i = 0; i < JumpScarePaths.Length; i++)
         {
             JumpScarePathsVector3[i] = JumpScarePaths[i].position;
         }
-            
-        await transform.DORotate(new Vector3(0, 360, 0), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear);
-            
-        transform.DOPath (JumpScarePathsVector3, 5f, PathType.CatmullRom).SetEase(Ease.Linear).OnComplete(() =>
+
+        transform.DOPath(JumpScarePathsVector3, jumpScareDuration, PathType.CatmullRom).SetEase(Ease.Linear).OnWaypointChange(index =>
         {
-            GameSignals.Instance.onCameraComplete?.Invoke();
-            slider.SetActive(true);
-        }).OnWaypointChange((index) =>
-        {
-            if (index == 1)
-            {
-                transform.DORotate(new Vector3(0, 180, 0), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear);
-            }
+            if (index == 3) jumpScareAudioSource.Play();
         });
     }
 
     private void OnDisable()
     {
-        GameSignals.Instance.onTextCompleted -= OnTextCompeleted;
+        GameSignals.Instance.onGameComplete -= OnGameCompleted;
     }
 }

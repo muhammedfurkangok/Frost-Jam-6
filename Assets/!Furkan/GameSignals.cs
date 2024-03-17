@@ -20,5 +20,6 @@ namespace _Furkan
 
         public UnityAction onTextCompleted = delegate {  };
         public UnityAction onCameraComplete = delegate {  };
+        public UnityAction onGameComplete = delegate {  };
     }
 }

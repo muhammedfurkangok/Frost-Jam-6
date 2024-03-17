@@ -10,14 +10,17 @@ public class JumpScareController : MonoBehaviour
 {
     [SerializeField] private Transform[] JumpScarePaths;
     [SerializeField] private Vector3[] JumpScarePathsVector3;
-    [SerializeField] private GameObject slider;
         
     private void Start()
     {
-        GameSignals.Instance.onTextCompleted += OnTextCompeleted;
+
+        OnGameComplete();
+        GameSignals.Instance.onGameComplete += OnGameComplete;
+        
+        //TODO:YURUME SESI VE JUMP SACRE SESI EKLENECEK
     }
 
-    private async void OnTextCompeleted()
+    private async void OnGameComplete()
     {
         JumpScarePathsVector3 = new Vector3[JumpScarePaths.Length];
         for (int i = 0; i < JumpScarePaths.Length; i++)
@@ -26,24 +29,15 @@ public class JumpScareController : MonoBehaviour
         }
             
         await transform.DORotate(new Vector3(0, 360, 0), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear);
-            
-        transform.DOPath (JumpScarePathsVector3, 5f, PathType.CatmullRom).SetEase(Ease.Linear).OnComplete(() =>
+
+        transform.DOPath(JumpScarePathsVector3, 5f, PathType.CatmullRom).SetEase(Ease.Linear).OnComplete(() =>
         {
-            GameSignals.Instance.onCameraComplete?.Invoke();
-            slider.SetActive(true);
-        }).OnWaypointChange((index) =>
-        {
-            if (index == 1)
-            {
-                transform.DORotate(new Vector3(0, 180, 0), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear);
-            }
         });
     }
 
     private void OnDisable()
     {
-        GameSignals.Instance.onTextCompleted -= OnTextCompeleted;
+        GameSignals.Instance.onGameComplete -= OnGameComplete;
     }
 }
-}
-}
+

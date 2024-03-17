@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 280660279}
   serializedVersion: 2
   m_LocalRotation: {x: 0.28236246, y: -0, z: -0, w: 0.9593078}
-  m_LocalPosition: {x: 0, y: 39.9, z: -29.1}
+  m_LocalPosition: {x: 33.49, y: 28.37, z: -2163.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -474,12 +474,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0127699e2bcd463caaa5872c6642e833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterPositionStates: 1
-  m_animator: {fileID: 881795407854175705}
-  _jumpPower: 1200
-  _swipeSpeed: 35
-  rotEase: 32
+  animator: {fileID: 881795407854175705}
+  rigidbody: {fileID: 3202731448161880570}
+  jumpPower: 1200
+  rotationEase: 1
+  swipeSpeed: 20
   rotationDuration: 0.23
+  rollDuration: 1.18
+  deltaXValue: 20
+  characterPositionState: 1
+  isJumping: 0
+  isRolling: 0
+  isGrounded: 1
 --- !u!4 &349817119768414438
 Transform:
   m_ObjectHideFlags: 0
@@ -1521,10 +1527,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6547363684480835491}
-  - component: {fileID: 881795407854175705}
-  - component: {fileID: 268433743634736772}
   - component: {fileID: 3202731448161880570}
   - component: {fileID: 3216512084646883181}
+  - component: {fileID: 881795407854175705}
+  - component: {fileID: 268433743634736772}
   m_Layer: 0
   m_Name: Jake
   m_TagString: Player
@@ -1638,7 +1644,7 @@ Transform:
   m_GameObject: {fileID: 5879229653846426905}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3, y: 0, z: -450.3}
+  m_LocalPosition: {x: 33.3, y: 0, z: -2145.35}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:

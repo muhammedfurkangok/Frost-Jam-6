@@ -25,7 +25,7 @@ public class SubwaySurfersManager : MonoBehaviour
 
     private void Update()
     {
-        if (!isGameActive && playerController.isObstacleHit) return;
+        if (!isGameActive || playerController.isObstacleHit) return;
 
         foreach (var level in levels) level.Translate(Vector3.back * (levelSpeed * Time.deltaTime));
     }

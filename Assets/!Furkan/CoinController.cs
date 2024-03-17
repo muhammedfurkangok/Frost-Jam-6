@@ -10,7 +10,7 @@ namespace _Furkan
             if (other.gameObject.CompareTag("Coin"))
             {
                 PointManager.Instance.IncreaseScore(_score);
-                Destroy(gameObject);
+                Destroy(other.gameObject);
             }
         }
     }

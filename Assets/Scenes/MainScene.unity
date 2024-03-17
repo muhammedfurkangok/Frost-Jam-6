@@ -237,6 +237,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 238b2dba3e6b74d42a3ff8c2753f8e08, type: 3}
+--- !u!1 &297975440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 297975442}
+  - component: {fileID: 297975441}
+  m_Layer: 0
+  m_Name: PointManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &297975441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297975440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b47d2d7e64baf4aa780b8c9c9b5a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &297975442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297975440}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.055878073, y: 6.177089, z: 17791.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &418651094
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +804,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4102137561005761775, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2208.01
+      objectReference: {fileID: 0}
     - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -816,7 +865,8 @@ PrefabInstance:
       value: SubwaySurfers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1856985722875732640, guid: 11f05b9cbaff35c4ebc50d25f3258d71, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11f05b9cbaff35c4ebc50d25f3258d71, type: 3}
@@ -1566,3 +1616,4 @@ SceneRoots:
   - {fileID: 942538891}
   - {fileID: 778947008}
   - {fileID: 1576334132}
+  - {fileID: 297975442}

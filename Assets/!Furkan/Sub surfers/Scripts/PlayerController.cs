@@ -17,9 +17,11 @@ namespace _Furkan.Sub_surfers.Scripts
         [SerializeField] private float rotationDuration = 0.23f;
         [SerializeField] private float rollDuration = 1.18f;
         [SerializeField] private float deltaXValue = 20;
+        [SerializeField] private float obstacleHitWaitTime = 3f;
 
         [Header("Info - No Touch")]
         [SerializeField] private CharacterPositionStates characterPositionState = CharacterPositionStates.Mid;
+        [SerializeField] private bool isObstacleHit;
         [SerializeField] private bool isJumping;
         [SerializeField] private bool isRolling;
         [SerializeField] private bool isGrounded = true;
@@ -28,6 +30,8 @@ namespace _Furkan.Sub_surfers.Scripts
         private float newXPosition;
 
         private static readonly int SlideTrigger = Animator.StringToHash("Slide_Trigger");
+        private static readonly int ObstacleHit = Animator.StringToHash("ObstacleHit");
+
         private bool swipeUp, swipeLeft, swipeRight, swipeDown;
 
         private void Start()
@@ -37,6 +41,8 @@ namespace _Furkan.Sub_surfers.Scripts
 
         private void Update()
         {
+            if (isObstacleHit) return;
+
             GetInput();
 
             Jump();
@@ -57,12 +63,13 @@ namespace _Furkan.Sub_surfers.Scripts
         {
             DOTween.Kill(gameObject);
 
-            if(swipeLeft )
+            if (swipeLeft)
             {
                 if (characterPositionState == CharacterPositionStates.Mid)
                 {
                     newXPosition -= deltaXValue;
                     characterPositionState = CharacterPositionStates.Left;
+
                     animator.Play("dodgeLeft");
                 }
 
@@ -70,17 +77,20 @@ namespace _Furkan.Sub_surfers.Scripts
                 {
                     characterPositionState = CharacterPositionStates.Mid;
                     newXPosition = startPosition.x;
+
                     animator.Play("dodgeLeft");
                 }
 
                 transform.DORotate(new Vector3(0f, -45f, 0), rotationDuration);
             }
+
             else if (swipeRight)
             {
                 if (characterPositionState == CharacterPositionStates.Mid)
                 {
                     newXPosition += deltaXValue;
                     characterPositionState = CharacterPositionStates.Right;
+
                     animator.Play("dodgeRight");
                 }
 
@@ -88,6 +98,7 @@ namespace _Furkan.Sub_surfers.Scripts
                 {
                     characterPositionState = CharacterPositionStates.Mid;
                     newXPosition = startPosition.x;
+
                     animator.Play("dodgeRight");
                 }
 
@@ -105,18 +116,13 @@ namespace _Furkan.Sub_surfers.Scripts
                 {
                     animator.CrossFadeInFixedTime("Jump",0.1f);
                     rigidbody.AddForce(jumpPower * Vector3.up);
+                    isJumping = true;
                 }
                 
-                if(animator.GetCurrentAnimatorStateInfo(0).IsName("Falling"))
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Falling"))
                 {
                     animator.Play("Landing");
                     isJumping = false;
-                }
-                
-                if (swipeUp)
-                {
-                    animator.CrossFadeInFixedTime("Jump",0.1f);
-                    isJumping = true;
                 }
             }
         }
@@ -129,11 +135,23 @@ namespace _Furkan.Sub_surfers.Scripts
             isRolling = false;
         }
 
-        private void OnCollisionEnter(Collision other)
+        private async void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("Ground"))
             {
                 isGrounded = true;
+                isJumping = false;
+            }
+
+            if (other.gameObject.CompareTag("Obstacle"))
+            {
+                other.collider.GetComponent<Obstacle>().DestroyObstacle();
+
+                DOTween.Kill(gameObject);
+                animator.SetTrigger(ObstacleHit);
+                isObstacleHit = true;
+                await UniTask.WaitForSeconds(obstacleHitWaitTime);
+                isObstacleHit = false;
             }
         }
 
@@ -142,7 +160,7 @@ namespace _Furkan.Sub_surfers.Scripts
             if (other.gameObject.CompareTag("Ground"))
             {
                 isGrounded = false;
-            }   
+            }
         }
     }
 }

@@ -1667,6 +1667,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 385211174143401618, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525679659010242582, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1721,6 +1731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SubwaySurfers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994783579116447975, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

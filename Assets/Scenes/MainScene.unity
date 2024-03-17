@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 148270932}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.00000023841855}
-  m_LocalPosition: {x: 2.7194023, y: 0.0059999228, z: 13.714305}
+  m_LocalPosition: {x: 2.7194023, y: -0.131, z: 13.714305}
   m_LocalScale: {x: 1, y: 1, z: -2.3760064}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -268,6 +268,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 942538891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &524563691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3567397927268446295, guid: 8e5ddc2961f0240468560442b59ed84c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4633833435454211907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &778947006
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,8 +468,6 @@ MonoBehaviour:
   thisText: {fileID: 823382644}
   _canvasGroup: {fileID: 1663319738}
   delay: 0.05
-  soundDelay: 0.1
-  TypeSound: {fileID: 8300000, guid: 47f676803f909b34ba0084594283b986, type: 3}
   yazi: 'YINE POTANSIYELIMIZI KAYBETTIGIMIZ VE BEYNIMIZI CURUTTUGUMUZ SIRADAN BIR
     GUN...
 
@@ -742,6 +746,80 @@ Transform:
   - {fileID: 148270933}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!328 &1101829928 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 3695278631519048518, guid: 563c5f16352fab94abfb60522f7bb5af,
+    type: 3}
+  m_PrefabInstance: {fileID: 5054590050729136726}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1576334132
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268465037715651270, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415935475065522501, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+        type: 3}
+      propertyPath: m_Name
+      value: SubwaySurfers
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11f05b9cbaff35c4ebc50d25f3258d71, type: 3}
 --- !u!1 &1663319733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,7 +1120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458416, guid: edc13eb972d2a704db06565103473e80, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18
+      value: -0.317
       objectReference: {fileID: 0}
     - target: {fileID: 458416, guid: edc13eb972d2a704db06565103473e80, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1157,6 +1235,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040660347}
   m_CullTransparentMesh: 1
+--- !u!114 &2065458132 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 204950156136619155, guid: 11f05b9cbaff35c4ebc50d25f3258d71,
+    type: 3}
+  m_PrefabInstance: {fileID: 1576334132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0d46af865dcbb4891d435cb7be4453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2088923292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,6 +1403,7 @@ MonoBehaviour:
   - {fileID: 1872257604}
   - {fileID: 148270933}
   CameraPathsVector3: []
+  slider: {fileID: 524563691}
 --- !u!1001 &4633833435454211907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1321,11 +1412,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1015963753113715113, guid: 8e5ddc2961f0240468560442b59ed84c,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2467223694738744443, guid: 8e5ddc2961f0240468560442b59ed84c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1334,7 +1420,7 @@ PrefabInstance:
     - target: {fileID: 2467223694738744443, guid: 8e5ddc2961f0240468560442b59ed84c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.202
+      value: 1.065
       objectReference: {fileID: 0}
     - target: {fileID: 2467223694738744443, guid: 8e5ddc2961f0240468560442b59ed84c,
         type: 3}
@@ -1381,16 +1467,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Phone
       objectReference: {fileID: 0}
-    - target: {fileID: 7285791541614431426, guid: 8e5ddc2961f0240468560442b59ed84c,
+    - target: {fileID: 5063304060623654373, guid: 8e5ddc2961f0240468560442b59ed84c,
         type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8957303887297187290, guid: 8e5ddc2961f0240468560442b59ed84c,
+      propertyPath: familyGuyVideoPlayer
+      value: 
+      objectReference: {fileID: 1101829928}
+    - target: {fileID: 5063304060623654373, guid: 8e5ddc2961f0240468560442b59ed84c,
         type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: subwaySurfersManager
+      value: 
+      objectReference: {fileID: 2065458132}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1459,11 +1545,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FamilyGuyTV
       objectReference: {fileID: 0}
-    - target: {fileID: 3695278631519048518, guid: 563c5f16352fab94abfb60522f7bb5af,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1484,3 +1565,4 @@ SceneRoots:
   - {fileID: 932856541}
   - {fileID: 942538891}
   - {fileID: 778947008}
+  - {fileID: 1576334132}

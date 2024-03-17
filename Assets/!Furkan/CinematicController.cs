@@ -14,7 +14,6 @@ namespace _Furkan
         private void Start()
         {
             GameSignals.Instance.onTextCompleted += OnTextCompeleted;
-            
         }
 
         private async void OnTextCompeleted()
@@ -31,7 +30,6 @@ namespace _Furkan
             {
                GameSignals.Instance.onCameraComplete?.Invoke();
                slider.SetActive(true);
-               ;    
             }).OnWaypointChange((index) =>
             {
                  if (index == 1)

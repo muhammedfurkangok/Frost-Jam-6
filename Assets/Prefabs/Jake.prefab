@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0127699e2bcd463caaa5872c6642e833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subwaySurfersManager: {fileID: 6693747565958542189}
   subwaySurfersCamera: {fileID: 0}
   animator: {fileID: 5038818514882178790}
   rigidbody: {fileID: 5004476898017866164}

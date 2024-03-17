@@ -12,19 +12,15 @@ public class TypeWriter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI thisText;
     [SerializeField] private CanvasGroup _canvasGroup;
     public float delay;
-    public float soundDelay;
-    public AudioClip TypeSound;
     [Multiline] public string yazi;
     
-  
-    AudioSource audSrc;
+    
 
     private void Start()
     {
-        audSrc = GetComponent<AudioSource>();
 
         StartCoroutine(TypeWrite());
-        TypeSound1();
+       
     }
 
     IEnumerator TypeWrite()
@@ -40,16 +36,6 @@ public class TypeWriter : MonoBehaviour
         
         
     }
-
-    private async void TypeSound1()
-    {
-        foreach (char i in yazi)
-        {
-            audSrc.PlayOneShot(TypeSound);
-            await UniTask.WaitForSeconds(soundDelay);
-        }
-    }
-
     void WriteCharWithSound(char i)
     {
         thisText.text += i.ToString();

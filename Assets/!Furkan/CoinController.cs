@@ -7,10 +7,13 @@ namespace _Furkan
     public class CoinController : MonoBehaviour
     {
         private int _score = 10;
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip coinSound;
         private async void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("Coin"))
             {
+                audioSource.PlayOneShot(coinSound);
                 PointManager.Instance.IncreaseScore(_score);
                 other.gameObject.SetActive(false);
                 await UniTask.WaitForSeconds(5);
@@ -24,6 +27,7 @@ namespace _Furkan
 
             if (other.gameObject.CompareTag("Coin"))
             {
+                audioSource.PlayOneShot(coinSound);
                 //PointManager.Instance.IncreaseScore(_score);
                 other.gameObject.SetActive(false);
                 await UniTask.WaitForSeconds(5);

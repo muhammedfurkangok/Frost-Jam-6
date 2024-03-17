@@ -1,18 +1,22 @@
 using System;
 using _Furkan;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class GameStarter : MonoBehaviour
 {
-    [Header("References")] [SerializeField]
-    private VideoPlayer familyGuyVideoPlayer;
-
+    [Header("References")]
+    [SerializeField]private VideoPlayer familyGuyVideoPlayer;
     [SerializeField] private VideoPlayer subwaySurfersVideoPlayer;
     [SerializeField] private SubwaySurfersManager subwaySurfersManager;
     [SerializeField] private CarController carController;
     [SerializeField] private GameObject subwaySurfersPlane;
     [SerializeField] private GameObject carPlane;
+
+    [Header("Game Complete")]
+    [SerializeField] private GameObject videoPlane;
+    [SerializeField] private Slider slider;
 
     private void Start()
     {
@@ -45,5 +49,17 @@ public class GameStarter : MonoBehaviour
 
         subwaySurfersPlane.SetActive(willSubwayBeActive);
         carPlane.SetActive(!willSubwayBeActive);
+    }
+
+    public void CompleteGame()
+    {
+        subwaySurfersManager.isGameActive = false;
+        carController.isGameActive = false;
+
+        subwaySurfersPlane.SetActive(false);
+        carPlane.SetActive(false);
+
+        slider.gameObject.SetActive(false);
+        videoPlane.SetActive(false);
     }
 }

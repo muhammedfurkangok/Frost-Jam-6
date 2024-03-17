@@ -476,14 +476,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 881795407854175705}
   rigidbody: {fileID: 3202731448161880570}
-  xSpeed: 0
   jumpPower: 1200
   rotationEase: 1
   swipeSpeed: 20
   rotationDuration: 0.23
   rollDuration: 1.18
   deltaXValue: 20
+  obstacleHitWaitTime: 3
   characterPositionState: 1
+  isObstacleHit: 0
   isJumping: 0
   isRolling: 0
   isGrounded: 1

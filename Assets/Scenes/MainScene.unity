@@ -585,6 +585,7 @@ MonoBehaviour:
   yazi: "KARSINA CIKAN KISI GELECEKTEKI HALININ SANA SON MESAJIYDI POTANSIYELINI
     FARK ET VE BEYNINI CURUTMEYI BIRAK\n\nOYNADIGINIZ ICIN TESEKKURLER\n\nOZGUR DALBELER
     \nAGAH CANSU\nMUHAMMED FURKAN GOK\n"
+  isCompletedTypeWriter: 1
 --- !u!114 &332764459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,6 +956,7 @@ MonoBehaviour:
 
     BAKALIM
     BUGUN AYNI ANDA KAC TANE ICERIK TUKETECEGIZ.'
+  isCompletedTypeWriter: 0
 --- !u!114 &823382644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2637,6 +2639,6 @@ SceneRoots:
   - {fileID: 778947008}
   - {fileID: 1576334132}
   - {fileID: 297975442}
-  - {fileID: 847812433}
   - {fileID: 94437530}
   - {fileID: 621736758}
+  - {fileID: 847812433}

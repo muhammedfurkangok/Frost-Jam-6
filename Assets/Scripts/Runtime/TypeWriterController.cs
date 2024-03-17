@@ -13,7 +13,8 @@ public class TypeWriter : MonoBehaviour
     [SerializeField] private CanvasGroup _canvasGroup;
     public float delay;
     [Multiline] public string yazi;
-    
+
+    public bool isCompletedTypeWriter;
     
 
     private void OnEnable()
@@ -43,6 +44,9 @@ public class TypeWriter : MonoBehaviour
 
     private void FadeOutCanvas()
     {
-        DOTween.To(() => _canvasGroup.alpha, x => _canvasGroup.alpha = x, 0, 1).SetEase(Ease.InSine).onComplete += () => GameSignals.Instance.onTextCompleted.Invoke();
+        DOTween.To(() => _canvasGroup.alpha, x => _canvasGroup.alpha = x, 0, 1).SetEase(Ease.InSine).onComplete += () =>
+        {
+            if (!isCompletedTypeWriter) GameSignals.Instance.onTextCompleted.Invoke();
+        };
     }
 }

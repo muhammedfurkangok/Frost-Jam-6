@@ -40,7 +40,7 @@ public class GameStarter : MonoBehaviour
         ChangeGame();
         StartGameChangeLoop();
 
-        familyGuyVideoPlayer.SetDirectAudioVolume(0, 0.1f);
+        familyGuyVideoPlayer.SetDirectAudioVolume(0, 0.07f);
         subwaySurfersVideoPlayer.Play();
     }
 

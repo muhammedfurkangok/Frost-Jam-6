@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f1d936c22178edc43b897b73af28d786,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 54.641327
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1d936c22178edc43b897b73af28d786,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.20000005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1d936c22178edc43b897b73af28d786,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1263.51
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1d936c22178edc43b897b73af28d786,
         type: 3}
@@ -72,24 +72,24 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f1d936c22178edc43b897b73af28d786,
+    - targetCorrespondingSourceObject: {fileID: -8730216847644610343, guid: f1d936c22178edc43b897b73af28d786,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7670970035147687332}
+      addedObject: {fileID: 3127077935068196788}
   m_SourcePrefab: {fileID: 100100000, guid: f1d936c22178edc43b897b73af28d786, type: 3}
---- !u!1 &6647180188163912733 stripped
+--- !u!1 &6207900857791953301 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f1d936c22178edc43b897b73af28d786,
+  m_CorrespondingSourceObject: {fileID: -8730216847644610343, guid: f1d936c22178edc43b897b73af28d786,
     type: 3}
   m_PrefabInstance: {fileID: 5836364917473216844}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &7670970035147687332
+--- !u!65 &3127077935068196788
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6647180188163912733}
+  m_GameObject: {fileID: 6207900857791953301}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -102,5 +102,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 18.980656, y: 18.186958, z: 5.9842377}
+  m_Center: {x: 0.18141937, y: 20.296871, z: -5.122246}

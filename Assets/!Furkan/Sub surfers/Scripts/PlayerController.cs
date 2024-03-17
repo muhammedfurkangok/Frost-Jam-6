@@ -30,7 +30,7 @@ namespace _Furkan.Sub_surfers.Scripts
         private float newXPosition;
 
         private static readonly int SlideTrigger = Animator.StringToHash("Slide_Trigger");
-        private static readonly int ObstacleHit = Animator.StringToHash("ObstacleHit");
+        private static readonly int ObstacleHit = Animator.StringToHash("Obstacle_Hit");
 
         private bool swipeUp, swipeLeft, swipeRight, swipeDown;
 
@@ -145,11 +145,14 @@ namespace _Furkan.Sub_surfers.Scripts
 
             if (other.gameObject.CompareTag("Obstacle"))
             {
-                other.collider.GetComponent<Obstacle>().DestroyObstacle();
+                var obstacle = other.collider.GetComponent<Obstacle>();
+                if (IsPlayerAboveGivenObject(obstacle.transform)) return;
+
+                isObstacleHit = true;
+                obstacle.DestroyObstacle(true);
 
                 DOTween.Kill(gameObject);
                 animator.SetTrigger(ObstacleHit);
-                isObstacleHit = true;
                 await UniTask.WaitForSeconds(obstacleHitWaitTime);
                 isObstacleHit = false;
             }
@@ -161,6 +164,11 @@ namespace _Furkan.Sub_surfers.Scripts
             {
                 isGrounded = false;
             }
+        }
+
+        private bool IsPlayerAboveGivenObject(Transform aboveObject)
+        {
+            return false;
         }
     }
 }

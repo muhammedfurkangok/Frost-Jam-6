@@ -15,7 +15,7 @@ public class PlayerFingerController : MonoBehaviour
 
     private void RestartAnimation()
     {
-        animator.Play(FingerMovement, 0, 0f);
+        animator.Play(FingerMovement, 0, 0.2f);
         animator.Update(0f);
     }
 }

@@ -16,7 +16,7 @@ public class TypeWriter : MonoBehaviour
     
     
 
-    private void Start()
+    private void OnEnable()
     {
 
         StartCoroutine(TypeWrite());

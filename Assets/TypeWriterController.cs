@@ -1,5 +1,6 @@
 using System.Collections;
 using _Furkan;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -10,9 +11,11 @@ public class TypeWriter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI thisText;
     [SerializeField] private CanvasGroup _canvasGroup;
-    public float delay = 0.1f;
+    public float delay;
+    public float soundDelay;
     public AudioClip TypeSound;
     [Multiline] public string yazi;
+    
   
     AudioSource audSrc;
 
@@ -21,22 +24,35 @@ public class TypeWriter : MonoBehaviour
         audSrc = GetComponent<AudioSource>();
 
         StartCoroutine(TypeWrite());
+        TypeSound1();
     }
 
     IEnumerator TypeWrite()
     {
-        foreach(char i in yazi)
+       foreach(char i in yazi)
         {
-            thisText.text += i.ToString();
-
-            audSrc.pitch = Random.Range(0.8f, 1.2f);
-            audSrc.PlayOneShot(TypeSound);
-
-            if(i.ToString() == ".") { yield return new WaitForSeconds(1); }
-            else { yield return new WaitForSeconds(delay); }          
+            WriteCharWithSound(i);
+            if(i.ToString() == ".") { yield return new WaitForSeconds(0.4f); } 
+            yield return new WaitForSeconds(delay);         
         }
-
+         
         FadeOutCanvas();
+        
+        
+    }
+
+    private async void TypeSound1()
+    {
+        foreach (char i in yazi)
+        {
+            audSrc.PlayOneShot(TypeSound);
+            await UniTask.WaitForSeconds(soundDelay);
+        }
+    }
+
+    void WriteCharWithSound(char i)
+    {
+        thisText.text += i.ToString();
     }
 
     private void FadeOutCanvas()

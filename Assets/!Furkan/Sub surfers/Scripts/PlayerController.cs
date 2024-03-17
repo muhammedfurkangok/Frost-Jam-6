@@ -1,141 +1,121 @@
-using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Furkan.Sub_surfers.Scripts
 {
     public class PlayerController : MonoBehaviour
     {
-        #region Self Variables
+        [Header("References")]
+        [SerializeField] private Animator animator;
+        [SerializeField] private Rigidbody rigidbody;
 
-        #region Serialized Variables
+        [Header("Parameters")]
+        [SerializeField] private float jumpPower = 1200;
+        [SerializeField] private Ease rotationEase;
+        [SerializeField] private float swipeSpeed = 20f;
+        [SerializeField] private float rotationDuration = 0.23f;
+        [SerializeField] private float rollDuration = 1.18f;
+        [SerializeField] private float deltaXValue = 20;
 
-        [SerializeField] private CharacterPositionStates _characterPositionStates = CharacterPositionStates.Mid;
-        [SerializeField] private Animator m_animator;
-        [SerializeField] private float _jumpPower = 30;
-
-        [SerializeField]  private float _swipeSpeed = 20;
-
-        #endregion
-
-        #region Private Variables
-
-        private bool _swipeUp, _swipeLeft, _swipeRight, _swipeDown;
-
-        private bool isJumping;
-        private bool isRoll;
-        private bool isGrounded = true;
-
-        private float _xValue = 20;
-       
-        private float _newXPos = 0f;
-        private float _lerp;
-        private Rigidbody _rigidbody;
-        private float ColHeight;
-        private float ColCenterY;
-        private float rollDuration = 1.18f;
-       [SerializeField] private Ease rotEase;
-       [FormerlySerializedAs("rotationSpeed")] [SerializeField] private float rotationDuration = 0.1f;
-        
-        
-        private static readonly int SlideTrigger = Animator.StringToHash("Slide_Trigger");
-
-        #endregion
-
-
-        #endregion
+        [Header("Info - No Touch")]
+        [SerializeField] private CharacterPositionStates characterPositionState = CharacterPositionStates.Mid;
+        [SerializeField] private bool isJumping;
+        [SerializeField] private bool isRolling;
+        [SerializeField] private bool isGrounded = true;
 
         private Vector3 startPosition;
+        private float newXPosition;
+
+        private static readonly int SlideTrigger = Animator.StringToHash("Slide_Trigger");
+        private bool swipeUp, swipeLeft, swipeRight, swipeDown;
 
         private void Start()
         {
-            m_animator = GetComponent<Animator>();
             startPosition = transform.position;
-            _rigidbody = GetComponent<Rigidbody>();
-
         }
 
         private void Update()
         {
             GetInput();
-          if(  _swipeLeft||  _swipeRight) Move();
+
             Jump();
-            
-            if (isGrounded && _swipeDown) Roll();
+
+            if (swipeLeft || swipeRight) Move();
+            if (isGrounded && swipeDown) Roll();
         }
 
         private void GetInput()
         {
-            _swipeLeft = Input.GetKeyDown(KeyCode.A);
-            _swipeRight = Input.GetKeyDown(KeyCode.D);
-            _swipeUp =  Input.GetKeyDown(KeyCode.W);
-            _swipeDown = Input.GetKeyDown(KeyCode.S);
+            swipeLeft = Input.GetKeyDown(KeyCode.A);
+            swipeRight = Input.GetKeyDown(KeyCode.D);
+            swipeUp =  Input.GetKeyDown(KeyCode.W);
+            swipeDown = Input.GetKeyDown(KeyCode.S);
         }
 
         private void Move()
         {
-            DOTween.KillAll();
-            if(_swipeLeft )
-            {
-                if(_characterPositionStates == CharacterPositionStates.Mid)
-                {
-                    _newXPos = -_xValue;
-                    _characterPositionStates = CharacterPositionStates.Left;
-                    m_animator.Play("dodgeLeft");
+            DOTween.Kill(gameObject);
 
-                }
-                else if(_characterPositionStates == CharacterPositionStates.Right)
+            if(swipeLeft )
+            {
+                if (characterPositionState == CharacterPositionStates.Mid)
                 {
-                    _characterPositionStates = CharacterPositionStates.Mid;
-                    _newXPos = startPosition.x;
-                    m_animator.Play("dodgeLeft");
+                    newXPosition -= deltaXValue;
+                    characterPositionState = CharacterPositionStates.Left;
+                    animator.Play("dodgeLeft");
+                }
+
+                else if (characterPositionState == CharacterPositionStates.Right)
+                {
+                    characterPositionState = CharacterPositionStates.Mid;
+                    newXPosition = startPosition.x;
+                    animator.Play("dodgeLeft");
                 }
 
                 transform.DORotate(new Vector3(0f, -45f, 0), rotationDuration);
             }
-            else if(_swipeRight)
+            else if (swipeRight)
             {
-                if(_characterPositionStates == CharacterPositionStates.Mid)
+                if (characterPositionState == CharacterPositionStates.Mid)
                 {
-                    _newXPos = _xValue;
-                    _characterPositionStates = CharacterPositionStates.Right;
-                    m_animator.Play("dodgeRight");
+                    newXPosition += deltaXValue;
+                    characterPositionState = CharacterPositionStates.Right;
+                    animator.Play("dodgeRight");
                 }
-                else if(_characterPositionStates == CharacterPositionStates.Left)
+
+                else if (characterPositionState == CharacterPositionStates.Left)
                 {
-                    _characterPositionStates = CharacterPositionStates.Mid;
-                    _newXPos = startPosition.x;
-                    m_animator.Play("dodgeRight");
+                    characterPositionState = CharacterPositionStates.Mid;
+                    newXPosition = startPosition.x;
+                    animator.Play("dodgeRight");
                 }
+
                 transform.DORotate(new Vector3(0f, 45f, 0), rotationDuration);
             }
-          
-            transform.DOMoveX(_newXPos, _swipeSpeed).SetSpeedBased().onComplete += () => transform.DORotate(Vector3.zero, rotationDuration).SetEase(rotEase);
 
-
+            transform.DOMoveX(newXPosition, swipeSpeed).SetSpeedBased().onComplete += () => transform.DORotate(Vector3.zero, rotationDuration).SetEase(rotationEase);
         }
 
         private void Jump()
         {
             if (isGrounded)
             {
-                if (_swipeUp)
+                if (swipeUp)
                 {
-                    m_animator.CrossFadeInFixedTime("Jump",0.1f);
-                    _rigidbody.AddForce(_jumpPower * Vector3.up);
+                    animator.CrossFadeInFixedTime("Jump",0.1f);
+                    rigidbody.AddForce(jumpPower * Vector3.up);
                 }
                 
-                if(m_animator.GetCurrentAnimatorStateInfo(0).IsName("Falling"))
+                if(animator.GetCurrentAnimatorStateInfo(0).IsName("Falling"))
                 {
-                    m_animator.Play("Landing");
+                    animator.Play("Landing");
                     isJumping = false;
                 }
                 
-                if (_swipeUp)
+                if (swipeUp)
                 {
-                    m_animator.CrossFadeInFixedTime("Jump",0.1f);
+                    animator.CrossFadeInFixedTime("Jump",0.1f);
                     isJumping = true;
                 }
             }
@@ -143,10 +123,10 @@ namespace _Furkan.Sub_surfers.Scripts
         
         private async void Roll()
         {
-            m_animator.SetTrigger(SlideTrigger);
-            isRoll = true;
+            animator.SetTrigger(SlideTrigger);
+            isRolling = true;
             await UniTask.WaitForSeconds(rollDuration);
-            isRoll = false;
+            isRolling = false;
         }
 
         private void OnCollisionEnter(Collision other)
@@ -155,7 +135,6 @@ namespace _Furkan.Sub_surfers.Scripts
             {
                 isGrounded = true;
             }
-            
         }
 
         private void OnCollisionExit(Collision other)
@@ -166,5 +145,4 @@ namespace _Furkan.Sub_surfers.Scripts
             }   
         }
     }
-    
 }

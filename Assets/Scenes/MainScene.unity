@@ -667,85 +667,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2661824855137211700, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661824855137211700, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_TargetTexture
-      value: 
-      objectReference: {fileID: 8400000, guid: b11dd348b921a83459f972a7f66051ca, type: 2}
-    - target: {fileID: 6599863118684511518, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -37.639893
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599863118684511518, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -23.339844
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599863118684511518, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9813003
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599863118684511518, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.19248308
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599863118684511518, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.0000000084423135
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599863118684511518, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.0000000016559687
-      objectReference: {fileID: 0}
-    - target: {fileID: 7048753074925601940, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7330872869045667363, guid: 7c86d948eba0b294894586f338a951ae,
         type: 3}
       propertyPath: m_Name
       value: CarGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8185799967828237371, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -37.639893
-      objectReference: {fileID: 0}
-    - target: {fileID: 8185799967828237371, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -23.339844
-      objectReference: {fileID: 0}
-    - target: {fileID: 8185799967828237371, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9813003
-      objectReference: {fileID: 0}
-    - target: {fileID: 8185799967828237371, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.19248308
-      objectReference: {fileID: 0}
-    - target: {fileID: 8185799967828237371, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.0000000084423135
-      objectReference: {fileID: 0}
-    - target: {fileID: 8185799967828237371, guid: 7c86d948eba0b294894586f338a951ae,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.0000000016559687
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

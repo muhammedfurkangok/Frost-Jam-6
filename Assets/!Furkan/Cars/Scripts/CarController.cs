@@ -45,7 +45,7 @@ public class CarController : MonoBehaviour
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
         isBreaking = Input.GetKey(KeyCode.Space);
-        cam.m_Lens.FieldOfView = 60 + (verticalInput * 20);
+        cam.m_Lens.FieldOfView = 40 + (verticalInput * 10);
     }
 
     private void HandleMotor()

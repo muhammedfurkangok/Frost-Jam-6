@@ -1386,6 +1386,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8957303887297187290, guid: 8e5ddc2961f0240468560442b59ed84c,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1453,6 +1458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FamilyGuyTV
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695278631519048518, guid: 563c5f16352fab94abfb60522f7bb5af,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

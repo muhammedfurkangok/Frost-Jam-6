@@ -11,7 +11,7 @@ namespace _Furkan.Sub_surfers.Scripts
 
         public void DestroyObstacle(bool mustDestroyLinkedObstacle)
         {
-            if (mustDestroyLinkedObstacle) linkedObstacle.DestroyObstacle(false);
+            if (linkedObstacle && mustDestroyLinkedObstacle) linkedObstacle.DestroyObstacle(false);
 
             foreach (var particle in particles) particle.gameObject.SetActive(true);
 

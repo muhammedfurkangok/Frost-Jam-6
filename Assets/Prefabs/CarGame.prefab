@@ -2666,7 +2666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4987369315585317373}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19248295, y: -0.000000014622514, z: 0.0000000028682194, w: 0.98130035}
+  m_LocalRotation: {x: 0.19248293, y: 2.1178534e-15, z: 6.945189e-17, w: 0.98130035}
   m_LocalPosition: {x: -37.64, y: 7, z: -23.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3668,7 +3668,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8185799967828237371}
   - component: {fileID: 2661824855137211700}
-  - component: {fileID: 8037235156936837252}
   - component: {fileID: 7515767038667967877}
   - component: {fileID: 773239992946566166}
   m_Layer: 0
@@ -3686,7 +3685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7048753074925601940}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19248295, y: -0.000000014622514, z: 0.0000000028682194, w: 0.98130035}
+  m_LocalRotation: {x: 0.19248295, y: 0.000000010760794, z: -0.0000000021107394, w: 0.98130035}
   m_LocalPosition: {x: -37.64, y: 7, z: -23.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3744,14 +3743,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8037235156936837252
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7048753074925601940}
-  m_Enabled: 1
 --- !u!114 &7515767038667967877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5270,6 +5261,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 265135736956565685}
+    - target: {fileID: 9097118448607411722, guid: ae04a7fed7119c746bf419dc5ba23be2,
+        type: 3}
+      propertyPath: carCamera
+      value: 
+      objectReference: {fileID: 2661824855137211700}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

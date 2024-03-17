@@ -8,6 +8,7 @@ public class GameStarter : MonoBehaviour
     [SerializeField] private VideoPlayer familyGuyVideoPlayer;
     [SerializeField] private VideoPlayer subwaySurfersVideoPlayer;
     [SerializeField] private SubwaySurfersManager subwaySurfersManager;
+    [SerializeField] private CarController carController;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class GameStarter : MonoBehaviour
     private void OnCameraComplete()
     {
         subwaySurfersManager.isGameActive = true;
+        carController.isGameActive = false;
 
         familyGuyVideoPlayer.SetDirectAudioVolume(0,0.1f);
         subwaySurfersVideoPlayer.Play();

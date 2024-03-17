@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
+using _Furkan;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class GameStarter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Video Players")]
+    [SerializeField] private VideoPlayer familyGuyVideoPlayer;
+    [SerializeField] private VideoPlayer subwaySurfersVideoPlayer;
+    [SerializeField] private SubwaySurfersManager subwaySurfersManager;
+
+    private void Start()
     {
-        
+        GameSignals.Instance.onCameraComplete += OnCameraComplete;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        GameSignals.Instance.onCameraComplete -= OnCameraComplete;
+    }
+
+    private void OnCameraComplete()
+    {
+        subwaySurfersManager.isGameActive = true;
+
+        familyGuyVideoPlayer.SetDirectAudioVolume(0,0.1f);
+        subwaySurfersVideoPlayer.Play();
     }
 }

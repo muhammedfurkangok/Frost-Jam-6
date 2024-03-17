@@ -8,6 +8,7 @@ namespace _Furkan.Sub_surfers.Scripts
     public class PlayerController : MonoBehaviour
     {
         [Header("References")]
+        [SerializeField] private SubwaySurfersManager subwaySurfersManager;
         [SerializeField] private Camera subwaySurfersCamera;
         [SerializeField] private Animator animator;
         [SerializeField] private Rigidbody rigidbody;
@@ -50,7 +51,7 @@ namespace _Furkan.Sub_surfers.Scripts
 
         private void Update()
         {
-            if (isObstacleHit) return;
+            if (isObstacleHit || !subwaySurfersManager.isGameActive) return;
 
             GetInput();
 

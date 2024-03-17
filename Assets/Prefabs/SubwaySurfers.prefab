@@ -128,7 +128,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4662201260656460930}
   - component: {fileID: 4370497984080042602}
-  - component: {fileID: 7202508774089036281}
   - component: {fileID: 5625727581206179663}
   m_Layer: 0
   m_Name: Main Camera
@@ -193,7 +192,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: b11dd348b921a83459f972a7f66051ca, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -203,14 +202,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &7202508774089036281
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620978103205710036}
-  m_Enabled: 1
 --- !u!114 &5625727581206179663
 MonoBehaviour:
   m_ObjectHideFlags: 0

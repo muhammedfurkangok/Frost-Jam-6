@@ -9,36 +9,40 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class TypeWriter : MonoBehaviour
 {
-    [SerializeField] private Transform[] CreaturePaths;
-    [SerializeField] private Vector3[] CreatureVector3;
+    [SerializeField] private TextMeshProUGUI thisText;
+    [SerializeField] private CanvasGroup _canvasGroup;
+    public float delay;
+    [Multiline] public string yazi;
+    
+    
 
-        
     private void Start()
     {
-        GameSignals.Instance.onTextCompleted += OnTextCompeleted;
-            
+
+        StartCoroutine(TypeWrite());
+       
     }
 
-    private async void OnTextCompeleted()
+    IEnumerator TypeWrite()
     {
-        CreatureVector3 = new Vector3[CreaturePaths.Length];
-        for (int i = 0; i < CreaturePaths.Length; i++)
+       foreach(char i in yazi)
         {
-            CreatureVector3[i] = CreaturePaths[i].position;
+            WriteCharWithSound(i);
+            if(i.ToString() == ".") { yield return new WaitForSeconds(0.4f); } 
+            yield return new WaitForSeconds(delay);         
         }
-            
-        await transform.DORotate(new Vector3(0, 360, 0), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear);
-
-        transform.DOPath(CreatureVector3, 5f, PathType.CatmullRom).SetEase(Ease.Linear).OnComplete(() =>
-        {
-            GameSignals.Instance.onCameraComplete?.Invoke();
-            
-        });
+         
+        FadeOutCanvas();
+        
+        
     }
-
-    private void OnDisable()
+    void WriteCharWithSound(char i)
     {
-        GameSignals.Instance.onTextCompleted -= OnTextCompeleted;
+        thisText.text += i.ToString();
     }
 
+    private void FadeOutCanvas()
+    {
+        DOTween.To(() => _canvasGroup.alpha, x => _canvasGroup.alpha = x, 0, 1).SetEase(Ease.InSine).onComplete += () => GameSignals.Instance.onTextCompleted.Invoke();
+    }
 }
